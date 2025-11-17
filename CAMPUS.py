@@ -14,7 +14,6 @@ class Campus:
         self.cursos = []  # lista de cursos
 
     def adicionar_curso(self, curso: Curso):
-        # checar duplicado por código
         for c in self.cursos:
             if c.codigo == curso.codigo:
                 print(f"Já existe curso com código {curso.codigo} no campus {self.sigla}")
@@ -98,7 +97,6 @@ class SistemaUFC:
         if novo_nome:
             campus.nome = novo_nome
         if nova_sigla:
-            # verificar duplicado de sigla
             if any(c.sigla == nova_sigla for c in self.campuses if c is not campus):
                 print("Já existe outro campus com essa nova sigla.")
                 return False
@@ -108,7 +106,7 @@ class SistemaUFC:
     def menu(self):
         while True:
             print("\n=== Sistema UFC ===")
-            print("1. Gerenciar Campuses")
+            print("1. Gerenciar Câmpus")
             print("2. Gerenciar Cursos de um Campus")
             print("3. Sair")
             opc = input("Escolha uma opção: ")
@@ -125,9 +123,9 @@ class SistemaUFC:
 
     def menu_campuses(self):
         while True:
-            print("\n--- Menu Campuses ---")
+            print("\n--- Menu Câmpus ---")
             print("1. Criar campus")
-            print("2. Listar campuses")
+            print("2. Listar câmpus")
             print("3. Atualizar campus")
             print("4. Remover campus")
             print("5. Voltar")
